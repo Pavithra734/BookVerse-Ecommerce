@@ -1,0 +1,5681 @@
+/* =========================================================
+   BOOKVERSE - GLOBAL STYLES
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background: #f7f5f1;
+  color: #17212b;
+  transition: 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.dark {
+  background: #10151d;
+  color: #f4f0e8;
+}
+
+.dark header,
+.dark .book-card,
+.dark .summary,
+.dark .panel,
+.dark .stat,
+.dark .category-card,
+.dark .cart-item,
+.dark .cart-summary,
+.dark .checkout-box,
+.dark .checkout-summary,
+.dark .profile-cards > div,
+.dark .auth-box,
+.dark .success-box {
+  background: #18212b;
+}
+
+.dark .category-card,
+.dark .cart-item,
+.dark .cart-summary,
+.dark .checkout-box,
+.dark .checkout-summary {
+  border-color: #2a3541;
+}
+
+.dark .search {
+  background: #18212b;
+  border-color: #2a3541;
+  color: white;
+}
+
+.dark .search input {
+  color: white;
+}
+
+.dark .filters button {
+  color: #fff;
+  border-color: #3a4651;
+}
+
+.dark .filters button.active {
+  background: #f15b45;
+  border-color: #f15b45;
+}
+
+.dark .book-info p,
+.dark .cart-book-info p {
+  color: #aeb8be;
+}
+
+.dark .book-info h3,
+.dark .cart-book-info h2 {
+  color: #fff;
+}
+
+.dark .price,
+.dark .cart-price {
+  color: #fff;
+}
+
+.dark .add-btn {
+  background: transparent;
+  border-color: #3a4651;
+  color: white;
+}
+
+.dark .add-btn:hover {
+  background: #f15b45;
+  border-color: #f15b45;
+}
+
+.dark .cart-price span {
+  color: #89969e;
+}
+
+.dark .summary-divider {
+  background: #34414d;
+}
+
+.dark .quantity-controls {
+  border-color: #3a4651;
+}
+
+.dark .quantity-controls button {
+  color: white;
+}
+
+.dark .quantity-controls strong {
+  border-left-color: #3a4651;
+  border-right-color: #3a4651;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 245, 241, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e8e3dc;
+}
+
+.dark header {
+  background: rgba(16, 21, 29, 0.92);
+  border-color: #2a3541;
+}
+
+.nav {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.logo span {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #f15b45;
+  color: white;
+}
+
+.links {
+  display: flex;
+  gap: 23px;
+  flex: 1;
+}
+
+.links a {
+  font-weight: 600;
+  font-size: 14px;
+  color: #52606b;
+  transition: 0.2s;
+}
+
+.dark .links a {
+  color: #c8d0d4;
+}
+
+.links a:hover,
+.links a.active {
+  color: #f15b45;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.icon-btn,
+.logout {
+  border: 0;
+  background: transparent;
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #17212b;
+  position: relative;
+}
+
+.dark .icon-btn,
+.dark .logout {
+  color: white;
+}
+
+.icon-btn:hover {
+  background: #ece8e1;
+}
+
+.dark .icon-btn:hover {
+  background: #26323d;
+}
+
+.badge {
+  position: relative;
+}
+
+.badge i {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: #f15b45;
+  color: white;
+  font-size: 10px;
+  font-style: normal;
+  border-radius: 10px;
+  padding: 2px 5px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #e9e3da;
+  padding: 9px 12px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.dark .profile {
+  background: #26323d;
+}
+
+.login-link {
+  background: #17212b;
+  color: white;
+  padding: 10px 17px;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.dark .login-link {
+  background: #f15b45;
+}
+
+.mobile-menu {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 650px;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0;
+  background: radial-gradient(
+    circle at 70% 30%,
+    #f4c7a1 0,
+    #e99c75 25%,
+    #182632 65%
+  );
+  color: white;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(22, 38, 49, 0.9),
+    rgba(22, 38, 49, 0.2)
+  );
+}
+
+.hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  min-height: 500px;
+}
+
+.eyebrow {
+  color: #f15b45;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero .eyebrow {
+  color: #ffd9a5;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.98;
+  margin: 20px 0;
+}
+
+.hero h1 em {
+  color: #ffd39a;
+  font-style: italic;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #d7e0e4;
+  max-width: 540px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin: 30px 0;
+}
+
+.primary,
+.secondary {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+  transition: 0.25s;
+}
+
+.primary {
+  background: #f15b45;
+  color: white;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(241, 91, 69, 0.3);
+}
+
+.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 50px;
+}
+
+.hero-stats div {
+  display: grid;
+}
+
+.hero-stats b {
+  font-size: 24px;
+}
+
+.hero-stats span {
+  font-size: 12px;
+  color: #c6d0d4;
+}
+
+
+/* =========================================================
+   FLOATING BOOKS
+========================================================= */
+
+.hero-books {
+  height: 470px;
+  position: relative;
+}
+
+.float-book {
+  position: absolute;
+  width: 190px;
+  height: 285px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.45);
+  animation: floating 5s ease-in-out infinite;
+}
+
+.b0 {
+  right: 200px;
+  top: 70px;
+  transform: rotate(-13deg);
+}
+
+.b1 {
+  right: 10px;
+  top: 110px;
+  transform: rotate(12deg);
+  animation-delay: 1s;
+}
+
+.b2 {
+  right: 110px;
+  top: 190px;
+  transform: rotate(-1deg);
+  z-index: 2;
+  animation-delay: 2s;
+}
+
+@keyframes floating {
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -15px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.section {
+  padding: 85px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.section-head h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin: 7px 0;
+}
+
+.section-head > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #f15b45;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CATEGORY CARDS
+========================================================= */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.category-card {
+  background: white;
+  border: 1px solid #eae5dd;
+  border-radius: 18px;
+  padding: 22px;
+  display: grid;
+  gap: 7px;
+  transition: 0.25s;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(25, 42, 53, 0.08);
+}
+
+.category-card > span {
+  font-size: 28px;
+}
+
+.category-card b {
+  font-size: 14px;
+}
+
+.category-card small {
+  color: #82909a;
+}
+
+
+/* =========================================================
+   BOOK GRID
+========================================================= */
+
+.book-grid,
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+
+/* =========================================================
+   BOOK CARD
+========================================================= */
+
+.book-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(25, 42, 53, 0.05);
+  transition: 0.25s;
+  min-width: 0;
+}
+
+.book-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 35px rgba(25, 42, 53, 0.13);
+}
+
+.cover-wrap {
+  height: 285px;
+  position: relative;
+  background: #ddd;
+  overflow: hidden;
+}
+
+.cover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.book-card:hover .cover-wrap img {
+  transform: scale(1.03);
+}
+
+.heart {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 39px;
+  height: 39px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #f15b45;
+  display: grid;
+  place-items: center;
+  z-index: 2;
+  transition: 0.2s;
+}
+
+.heart:hover {
+  transform: scale(1.05);
+}
+
+.discount {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  background: #17212b;
+  color: white;
+  padding: 5px 9px;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.book-info {
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  min-height: 205px;
+}
+
+.book-info .category {
+  font-size: 10px;
+  color: #f15b45;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.book-info h3 {
+  margin: 6px 0 3px;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.book-info p {
+  margin: 0;
+  color: #82909a;
+  font-size: 13px;
+}
+
+.rating {
+  margin: 10px 0;
+  color: #d39120;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating svg {
+  width: 14px;
+}
+
+.price {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.price del {
+  font-size: 12px;
+  color: #99a1a6;
+  margin-left: 7px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   BOOK ACTIONS
+========================================================= */
+
+.book-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.add-btn,
+.buy-now-btn {
+  width: 100%;
+  min-height: 38px;
+  padding: 9px 10px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.add-btn {
+  background: white;
+  border: 1px solid #ddd6ce;
+  color: #182532;
+}
+
+.add-btn:hover {
+  background: #17212b;
+  border-color: #17212b;
+  color: white;
+}
+
+.buy-now-btn {
+  background: #f45b48;
+  border: 1px solid #f45b48;
+  color: white;
+}
+
+.buy-now-btn:hover {
+  background: #e94e3b;
+  border-color: #e94e3b;
+}
+
+.add-btn svg,
+.buy-now-btn svg {
+  width: 17px;
+}
+
+.dark .buy-now-btn {
+  background: #f15b45;
+  color: white;
+}
+
+
+/* =========================================================
+   SALE SECTION
+========================================================= */
+
+.deal {
+  margin: 25px auto 80px;
+  background: linear-gradient(120deg, #17212b, #314657);
+  border-radius: 28px;
+  padding: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.deal h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin: 10px 0;
+}
+
+.deal p {
+  color: #bdc8cd;
+}
+
+.timer {
+  font-size: 35px;
+  letter-spacing: 5px;
+}
+
+.timer b {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.timer small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 1px;
+  color: #9eabb2;
+  margin-top: 15px;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features {
+  padding-bottom: 70px;
+  display: flex;
+  gap: 55px;
+}
+
+.features > div {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.features svg {
+  color: #f15b45;
+}
+
+.features b {
+  font-size: 14px;
+}
+
+.features p {
+  margin: 3px 0;
+  font-size: 12px;
+  color: #82909a;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  background: #17212b;
+  color: white;
+  padding: 45px 0;
+}
+
+footer p {
+  color: #9facb3;
+}
+
+
+/* =========================================================
+   NORMAL PAGE
+========================================================= */
+
+.page {
+  padding: 60px 0 100px;
+}
+
+.page-title {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+  margin: 8px 0 28px;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search {
+  background: white;
+  border: 1px solid #e5ded6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+  height: 48px;
+  margin-bottom: 18px;
+}
+
+.search svg {
+  color: #82909a;
+}
+
+.search input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  width: 100%;
+  color: #17212b;
+}
+
+.search input::placeholder {
+  color: #929da3;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 30px;
+}
+
+.filters button {
+  border: 1px solid #ddd6ce;
+  background: transparent;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #52606b;
+  transition: 0.2s;
+}
+
+.filters button:hover {
+  border-color: #f15b45;
+  color: #f15b45;
+}
+
+.filters button.active {
+  background: #17212b;
+  border-color: #17212b;
+  color: white;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: #82909a;
+}
+
+.empty svg {
+  color: #f15b45;
+  margin-bottom: 15px;
+}
+
+.empty h2 {
+  color: #17212b;
+  margin-bottom: 8px;
+}
+
+.dark .empty h2 {
+  color: white;
+}
+
+
+/* =========================================================
+   CART PAGE
+========================================================= */
+
+.cart-page {
+  width: min(1180px, 92%);
+  margin: 0 auto;
+  padding: 50px 0 90px;
+  min-height: calc(100vh - 76px);
+}
+
+.cart-header {
+  margin-bottom: 35px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #f15b45;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.cart-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 5vw, 56px);
+  margin: 8px 0 0;
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(300px, 0.75fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item {
+  background: white;
+  border: 1px solid #e8e2da;
+  border-radius: 18px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 105px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  box-shadow: 0 5px 20px rgba(25, 42, 53, 0.04);
+}
+
+.cart-book-cover {
+  width: 105px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 9px;
+  background: #ddd;
+}
+
+.cart-book-info {
+  min-width: 0;
+}
+
+.cart-category {
+  display: inline-block;
+  color: #f15b45;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 6px;
+}
+
+.cart-book-info h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.cart-book-info p {
+  margin: 0 0 10px;
+  color: #82909a;
+  font-size: 13px;
+}
+
+.cart-price {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.cart-price span {
+  color: #99a1a6;
+  text-decoration: line-through;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.quantity-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ddd6ce;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.quantity-controls button {
+  width: 34px;
+  height: 32px;
+  border: 0;
+  background: transparent;
+  display: grid;
+  place-items: center;
+}
+
+.quantity-controls button:hover {
+  background: #f4f0eb;
+}
+
+.quantity-controls strong {
+  min-width: 35px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-left: 1px solid #ddd6ce;
+  border-right: 1px solid #ddd6ce;
+  font-size: 13px;
+}
+
+.buy-now-single {
+  display: inline-block;
+  background: #f7f2ec;
+  color: #52606b;
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.dark .buy-now-single {
+  background: #26323d;
+  color: #d5dde0;
+}
+
+.cart-item-right {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cart-item-right > strong {
+  font-size: 18px;
+}
+
+.remove-btn {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 9px;
+  background: #fff1ee;
+  color: #f15b45;
+  display: grid;
+  place-items: center;
+}
+
+.remove-btn:hover {
+  background: #f15b45;
+  color: white;
+}
+
+
+/* =========================================================
+   CART SUMMARY
+========================================================= */
+
+.cart-summary {
+  background: white;
+  border: 1px solid #e8e2da;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(25, 42, 53, 0.05);
+  position: sticky;
+  top: 100px;
+}
+
+.cart-summary h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  margin: 0 0 25px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.summary-row span {
+  color: #82909a;
+}
+
+.summary-row strong {
+  color: inherit;
+}
+
+.summary-divider {
+  height: 1px;
+  background: #e5ded6;
+  margin: 20px 0;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.summary-total strong {
+  font-size: 24px;
+}
+
+.checkout-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  background: #f15b45;
+  color: white;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.checkout-btn:hover {
+  background: #e94e3b;
+  transform: translateY(-1px);
+}
+
+.secure-text {
+  text-align: center;
+  color: #82909a;
+  font-size: 11px;
+  margin: 13px 0 0;
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+.cart-empty {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cart-empty svg {
+  color: #f15b45;
+  margin-bottom: 15px;
+}
+
+.cart-empty h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin: 8px 0;
+}
+
+.cart-empty p {
+  color: #82909a;
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   OLD CART COMPATIBILITY
+========================================================= */
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cart-list .cart-item {
+  display: flex;
+  align-items: center;
+}
+
+.cart-list .grow {
+  flex: 1;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.trash {
+  border: 0;
+  background: transparent;
+  color: #f15b45;
+}
+
+.wide {
+  width: 100%;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 25px;
+}
+
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+.auth-page {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  place-items: center;
+  padding: 50px 20px;
+}
+
+.auth-box {
+  width: min(450px, 100%);
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  box-shadow: 0 15px 45px rgba(25, 42, 53, 0.08);
+}
+
+.dark .auth-box {
+  background: #18212b;
+}
+
+.auth-box h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin: 5px 0 8px;
+}
+
+.auth-box > p {
+  color: #82909a;
+  font-size: 13px;
+}
+
+.form-group {
+  margin-bottom: 17px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #ddd6ce;
+  border-radius: 9px;
+  padding: 12px 13px;
+  outline: none;
+  background: transparent;
+}
+
+.dark .form-group input,
+.dark .form-group select,
+.dark .form-group textarea {
+  color: white;
+  border-color: #3a4651;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #f15b45;
+}
+
+.auth-box .primary {
+  width: 100%;
+  border: 0;
+}
+
+
+/* =========================================================
+   CHECKOUT PAGE
+   MATCHES YOUR CURRENT Checkout.jsx
+========================================================= */
+
+.checkout-box {
+  background: #ffffff;
+  border: 1px solid #e8e2da;
+  border-radius: 22px;
+  padding: 40px 32px;
+  box-shadow: 0 15px 45px rgba(25, 42, 53, 0.07);
+}
+
+.dark .checkout-box {
+  background: #18212b;
+  border-color: #2a3541;
+}
+
+
+/* Checkout heading */
+
+.checkout-box .eyebrow {
+  display: block;
+  color: #f15b45;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.checkout-box .page-title {
+  color: #192a35;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 48px;
+  line-height: 1.1;
+  margin: 0 0 42px;
+}
+
+.dark .checkout-box .page-title {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CHECKOUT FORM
+========================================================= */
+
+.checkout-box form {
+  width: 100%;
+}
+
+
+/*
+   IMPORTANT:
+   Your Checkout.jsx uses:
+
+   <div className="checkout-options">
+      <section>Delivery Address...</section>
+      <section>Payment Method...</section>
+   </div>
+
+   Therefore checkout-options is a TWO COLUMN GRID.
+*/
+
+.checkout-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: start;
+  margin-bottom: 35px;
+}
+
+.checkout-options section {
+  min-width: 0;
+}
+
+.checkout-options section h3 {
+  margin: 0 0 18px;
+  color: #192a35;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.dark .checkout-options section h3 {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   DELIVERY ADDRESS INPUTS
+========================================================= */
+
+.checkout-options section:first-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-options section:first-child > input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd6ce;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #17212b;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.checkout-options section:first-child > input::placeholder {
+  color: #7f8a91;
+}
+
+.checkout-options section:first-child > input:focus {
+  border-color: #f15b45;
+  box-shadow: 0 0 0 3px rgba(241, 91, 69, 0.12);
+}
+
+
+/* City + Pincode */
+
+.checkout-options section:first-child > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkout-options section:first-child > div input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1px solid #ddd6ce;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #17212b;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s ease;
+}
+
+.checkout-options section:first-child > div input::placeholder {
+  color: #7f8a91;
+}
+
+.checkout-options section:first-child > div input:focus {
+  border-color: #f15b45;
+  box-shadow: 0 0 0 3px rgba(241, 91, 69, 0.12);
+}
+
+
+/* =========================================================
+   PAYMENT METHOD
+========================================================= */
+
+.checkout-options section:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-options section:nth-child(2) h3 {
+  margin-bottom: 20px;
+}
+
+
+/*
+   Your JSX uses:
+
+   <label className="radio">
+      <input type="radio" ... />
+      UPI Payment
+   </label>
+*/
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 0 14px;
+  margin-bottom: 10px;
+  border: 1px solid #e0d9d1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #192a35;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.radio:hover {
+  border-color: #f15b45;
+  background: #fff8f6;
+}
+
+.radio input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  accent-color: #f15b45;
+  cursor: pointer;
+}
+
+.radio:has(input:checked) {
+  border-color: #f15b45;
+  background: #fff8f6;
+  color: #17212b;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CHECKOUT PAY NOW BUTTON
+========================================================= */
+
+/*
+   Your JSX uses:
+
+   <button
+      type="submit"
+      className="primary wide"
+   >
+*/
+
+.checkout-box .primary.wide {
+  width: 100%;
+  min-height: 56px;
+  border: 0;
+  border-radius: 12px;
+  background: #f15b45;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.checkout-box .primary.wide:hover {
+  background: #e94e3b;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(241, 91, 69, 0.22);
+}
+
+.checkout-box .primary.wide:active {
+  transform: translateY(0);
+}
+
+.checkout-box .primary.wide svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* =========================================================
+   CHECKOUT DARK MODE
+========================================================= */
+
+.dark .checkout-options section:first-child > input,
+.dark .checkout-options section:first-child > div input {
+  background: #202b36;
+  border-color: #3a4651;
+  color: #ffffff;
+}
+
+.dark .checkout-options section:first-child > input::placeholder,
+.dark .checkout-options section:first-child > div input::placeholder {
+  color: #9ba7ae;
+}
+
+.dark .checkout-options section:first-child > input:focus,
+.dark .checkout-options section:first-child > div input:focus {
+  border-color: #f15b45;
+}
+
+.dark .radio {
+  background: #202b36;
+  border-color: #3a4651;
+  color: #ffffff;
+}
+
+.dark .radio:hover {
+  background: rgba(241, 91, 69, 0.08);
+  border-color: #f15b45;
+}
+
+.dark .radio:has(input:checked) {
+  background: rgba(241, 91, 69, 0.08);
+  border-color: #f15b45;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CHECKOUT RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .checkout-options {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .checkout-options section:nth-child(2) {
+    margin-top: 5px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .page {
+    padding: 40px 0 70px;
+  }
+
+  .checkout-box {
+    width: 94%;
+    margin: 0 auto;
+    padding: 25px 20px;
+    border-radius: 17px;
+  }
+
+  .checkout-box .page-title {
+    font-size: 40px;
+    margin-bottom: 32px;
+  }
+
+  .checkout-options {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .checkout-options section:first-child > div {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .checkout-options section h3 {
+    font-size: 18px;
+  }
+
+  .checkout-options section:first-child > input,
+  .checkout-options section:first-child > div input {
+    height: 48px;
+  }
+
+  .radio {
+    min-height: 44px;
+    font-size: 13px;
+  }
+
+  .checkout-box .primary.wide {
+    min-height: 52px;
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   PAYMENT SUCCESS
+========================================================= */
+
+.success.container {
+  width: min(900px, 92%);
+  min-height: auto;
+
+  margin: 90px auto 80px;
+  padding: 55px 50px;
+
+  background: #ffffff;
+  border: 1px solid #e5e0d8;
+  border-radius: 24px;
+
+  box-shadow: 0 18px 50px rgba(25, 42, 53, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+/* SUCCESS ICON */
+
+.success.container > svg {
+  width: 82px;
+  height: 82px;
+
+  color: #f15b45;
+
+  margin-bottom: 18px;
+}
+
+
+/* PAYMENT COMPLETE */
+
+.success.container .eyebrow {
+  display: block;
+
+  color: #f15b45;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  margin-bottom: 8px;
+}
+
+
+/* SUCCESS HEADING */
+
+.success.container h1 {
+  font-family: "Playfair Display", serif;
+
+  font-size: 46px;
+  line-height: 1.15;
+
+  color: #192a35;
+
+  margin: 8px 0 15px;
+
+  max-width: 650px;
+}
+
+
+/* DESCRIPTION */
+
+.success.container p {
+  color: #69737b;
+
+  font-size: 16px;
+  line-height: 1.6;
+
+  margin: 0 auto 20px;
+
+  max-width: 500px;
+}
+
+
+/* ORDER NUMBER */
+
+.success.container .order-id {
+  display: inline-block;
+
+  width: auto;
+
+  margin: 5px auto 25px;
+
+  padding: 12px 22px;
+
+  background: #eee9e1;
+
+  color: #192a35;
+
+  border-radius: 10px;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* CONTINUE SHOPPING BUTTON */
+
+.success.container .primary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  min-width: 230px;
+  min-height: 55px;
+
+  padding: 14px 25px;
+
+  background: #f15b45;
+  color: #ffffff;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.success.container .primary:hover {
+  background: #e94e38;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(241, 91, 69, 0.25);
+}
+
+.success.container .primary svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* =========================================================
+   PAYMENT SUCCESS - DARK MODE
+========================================================= */
+
+.dark .success.container {
+  background: #18212b;
+  border-color: #2c3742;
+
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.dark .success.container h1 {
+  color: #ffffff;
+}
+
+.dark .success.container p {
+  color: #b7c0c8;
+}
+
+.dark .success.container .order-id {
+  background: #26323d;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PAYMENT SUCCESS - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .success.container {
+    width: 94%;
+
+    margin: 45px auto 60px;
+
+    padding: 40px 22px;
+
+    border-radius: 20px;
+  }
+
+  .success.container > svg {
+    width: 65px;
+    height: 65px;
+
+    margin-bottom: 14px;
+  }
+
+  .success.container .eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .success.container h1 {
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  .success.container p {
+    font-size: 14px;
+  }
+
+  .success.container .order-id {
+    font-size: 14px;
+
+    padding: 10px 16px;
+  }
+
+  .success.container .primary {
+    width: 100%;
+
+    min-width: 0;
+
+    min-height: 52px;
+  }
+}
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-page {
+  padding: 60px 0 100px;
+}
+
+.profile-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.profile-cards > div {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 5px 20px rgba(25, 42, 53, 0.05);
+}
+
+.profile-cards h3 {
+  margin-top: 0;
+}
+
+.profile-cards p {
+  color: #82909a;
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: stretch;
+}
+
+.admin aside {
+  width: 260px;
+  flex-shrink: 0;
+  background: #17212b;
+  color: white;
+  padding: 30px 20px;
+  position: sticky;
+  top: 76px;
+  height: calc(100vh - 76px);
+}
+
+.admin aside h2 {
+  font-family: "Playfair Display", serif;
+  margin-top: 0;
+}
+
+.admin aside nav {
+  display: grid;
+  gap: 6px;
+  margin-top: 25px;
+}
+
+.admin aside nav a {
+  padding: 11px 12px;
+  border-radius: 8px;
+  color: #bdc8cd;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin aside nav a:hover,
+.admin aside nav a.active {
+  background: #f15b45;
+  color: white;
+}
+
+.admin-main {
+  flex: 1;
+  padding: 40px;
+  min-width: 0;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(25, 42, 53, 0.05);
+}
+
+.stat span {
+  color: #82909a;
+  font-size: 12px;
+}
+
+.stat strong {
+  display: block;
+  font-size: 28px;
+  margin-top: 6px;
+}
+
+.admin-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.panel {
+  background: white;
+  border-radius: 17px;
+  padding: 22px;
+  box-shadow: 0 5px 20px rgba(25, 42, 53, 0.05);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee8e1;
+}
+
+.dark .row {
+  border-color: #2a3541;
+}
+
+.progress {
+  height: 7px;
+  background: #e8e3dc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: #f15b45;
+  border-radius: inherit;
+}
+
+.admin-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .book-grid,
+  .books-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-books {
+    transform: scale(0.9);
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .nav {
+    gap: 15px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-books {
+    height: 380px;
+    margin-top: 20px;
+  }
+
+  .b0 {
+    right: 42%;
+  }
+
+  .b1 {
+    right: 12%;
+  }
+
+  .b2 {
+    right: 27%;
+    top: 150px;
+  }
+
+  .features {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  .checkout-grid,
+  .admin-panels {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-main {
+    padding: 30px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 800px
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .book-grid,
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cover-wrap {
+    height: 245px;
+  }
+
+  .deal {
+    padding: 35px;
+    gap: 25px;
+  }
+
+  .deal h2 {
+    font-size: 34px;
+  }
+
+  .timer {
+    font-size: 25px;
+  }
+
+  .profile-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 600px
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .container {
+    width: 94%;
+  }
+
+  .nav {
+    height: 68px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .logo span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 55px 0;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-stats {
+    gap: 20px;
+    margin-top: 35px;
+  }
+
+  .hero-books {
+    height: 310px;
+  }
+
+  .float-book {
+    width: 135px;
+    height: 205px;
+  }
+
+  .b0 {
+    right: 44%;
+    top: 35px;
+  }
+
+  .b1 {
+    right: 5%;
+    top: 65px;
+  }
+
+  .b2 {
+    right: 25%;
+    top: 105px;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .section-head h2 {
+    font-size: 30px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .deal {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 22px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+  }
+
+  .deal h2 {
+    font-size: 31px;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .page {
+    padding: 40px 0 70px;
+  }
+
+  .page-title {
+    font-size: 40px;
+  }
+
+  .cart-page {
+    width: 94%;
+    padding-top: 35px;
+  }
+
+  .cart-item {
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 13px;
+    padding: 12px;
+  }
+
+  .cart-book-cover {
+    width: 82px;
+    height: 115px;
+  }
+
+  .cart-book-info h2 {
+    font-size: 18px;
+  }
+
+  .cart-item-right {
+    grid-column: 1 / -1;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 95px;
+  }
+
+  .cart-empty h1 {
+    font-size: 34px;
+  }
+
+  .auth-box {
+    padding: 27px 22px;
+  }
+
+  .admin {
+    overflow-x: auto;
+  }
+
+  .admin aside {
+    width: 220px;
+  }
+
+  .admin-main {
+    min-width: 600px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .book-grid,
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .cover-wrap {
+    height: 210px;
+  }
+
+  .book-info {
+    padding: 12px;
+    min-height: 185px;
+  }
+
+  .book-info h3 {
+    font-size: 14px;
+  }
+
+  .book-info p {
+    font-size: 11px;
+  }
+
+  .rating {
+    margin: 7px 0;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .price del {
+    font-size: 10px;
+    margin-left: 4px;
+  }
+
+  .add-btn,
+  .buy-now-btn {
+    min-height: 35px;
+    padding: 7px 5px;
+    font-size: 11px;
+  }
+
+  .add-btn svg,
+  .buy-now-btn svg {
+    width: 14px;
+  }
+
+  .heart {
+    width: 33px;
+    height: 33px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .discount {
+    font-size: 9px;
+    padding: 4px 6px;
+  }
+
+  .category-card {
+    padding: 16px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .book-grid,
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cover-wrap {
+    height: 260px;
+  }
+
+  .book-info h3 {
+    font-size: 16px;
+  }
+
+  .add-btn,
+  .buy-now-btn {
+    font-size: 12px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+}
+
+/* =========================================================
+   LOGIN / REGISTER PAGE FIX
+   ========================================================= */
+
+.auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* LEFT SIDE */
+
+.auth-art {
+  background: linear-gradient(
+    135deg,
+    #17212b,
+    #314657
+  );
+
+  color: white;
+  padding: 55px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-art h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 58px;
+  max-width: 600px;
+  margin-top: 100px;
+}
+
+.auth-art p {
+  color: #bac7cd;
+}
+
+/* BOOK IMAGES */
+
+.auth-books {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  gap: 20px;
+
+  transform: rotate(-9deg);
+}
+
+.auth-books img {
+  width: 150px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+/* RIGHT SIDE */
+
+.auth-form {
+  display: grid;
+  place-items: center;
+  padding: 30px;
+  background: #f8f6f2;
+}
+
+.form-box {
+  width: min(440px, 100%);
+}
+
+.form-box h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  margin: 10px 0;
+}
+
+.form-box > p {
+  color: #82909a;
+  margin-bottom: 30px;
+}
+
+/* FORM */
+
+.form-box form {
+  width: 100%;
+}
+
+.form-box form label {
+  display: grid;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 15px 0;
+}
+
+.form-box form input {
+  width: 100%;
+  border: 1px solid #ddd6ce;
+  background: white;
+  border-radius: 10px;
+  padding: 13px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-box form input:focus {
+  border-color: #f15b45;
+  box-shadow: 0 0 0 3px rgba(241, 91, 69, 0.1);
+}
+
+/* LOGIN BUTTON */
+
+.form-box .primary {
+  width: 100%;
+  border: 0;
+  margin-top: 10px;
+}
+
+/* TIP / HINT */
+
+.form-box .hint {
+  font-size: 12px !important;
+  margin: 0 0 18px !important;
+  color: #82909a;
+}
+
+/* CENTER TEXT */
+
+.form-box .center {
+  text-align: center;
+  font-size: 13px !important;
+  margin-top: 20px !important;
+}
+
+.form-box .center a {
+  color: #f15b45;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   LOGIN RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .auth {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-art {
+    min-height: 380px;
+  }
+
+  .auth-art h1 {
+    margin-top: 50px;
+    font-size: 42px;
+  }
+
+  .auth-books {
+    display: none;
+  }
+
+  .auth-form {
+    min-height: 500px;
+  }
+}
+
+
+/* =========================================================
+   LOGIN MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .auth-form {
+    padding: 25px 20px;
+  }
+
+  .form-box {
+    width: 100%;
+  }
+
+  .form-box h1 {
+    font-size: 36px;
+  }
+
+  .auth-art {
+    min-height: 300px;
+    padding: 30px;
+  }
+
+  .auth-art h1 {
+    font-size: 38px;
+    margin-top: 40px;
+  }
+}
+
+/* =========================================================
+   REGISTER PAGE
+   ========================================================= */
+
+.auth {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f7f5f1;
+}
+
+.auth-art {
+  min-height: 100vh;
+  padding: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    linear-gradient(rgba(20, 31, 42, 0.72), rgba(20, 31, 42, 0.72)),
+    url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.auth-art .logo {
+  position: absolute;
+  top: 35px;
+  left: 55px;
+  color: white;
+}
+
+.auth-art h1 {
+  max-width: 500px;
+  margin: 0 0 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 64px;
+  line-height: 1.05;
+}
+
+.auth-art p {
+  max-width: 400px;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+.auth-form {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 30px;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 470px;
+}
+
+.form-box h1 {
+  margin: 12px 0 8px;
+  color: #162533;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+}
+
+.form-box > p {
+  margin: 0 0 28px;
+  color: #6d747b;
+}
+
+.form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-box label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #1d2b36;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-box input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border: 1px solid #d8d5cf;
+  border-radius: 9px;
+  outline: none;
+  background: white;
+  color: #172632;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-box input:focus {
+  border-color: #f45b48;
+  box-shadow: 0 0 0 3px rgba(244, 91, 72, 0.12);
+}
+
+.form-box input::placeholder {
+  color: #a1a5a8;
+}
+
+.primary.wide {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 9px;
+  background: #f45b48;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.primary.wide:hover {
+  background: #e94e3c;
+  transform: translateY(-1px);
+}
+
+.primary.wide svg {
+  width: 18px;
+}
+
+.form-box .center {
+  margin: 5px 0 0;
+  text-align: center;
+  color: #73787d;
+  font-size: 14px;
+}
+
+.form-box .center a {
+  color: #f45b48;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   ADMIN LAYOUT
+   ========================================================= */
+
+.admin {
+  min-height: 100vh;
+  display: flex;
+  background: #f7f5f1;
+  color: #172632;
+}
+
+.admin aside {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 220px;
+  box-sizing: border-box;
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+  background: #16222d;
+  color: white;
+  z-index: 20;
+}
+
+.admin aside .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
+  color: white;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.admin aside .logo span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #f45b48;
+}
+
+.admin aside .logo svg {
+  width: 21px;
+  height: 21px;
+}
+
+.admin aside small {
+  margin-bottom: 10px;
+  color: #aeb8c0;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.admin aside button {
+  width: 100%;
+  min-height: 42px;
+  margin-bottom: 5px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #c8d0d6;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin aside button:hover,
+.admin aside button.active {
+  background: #263542;
+  color: white;
+}
+
+.admin aside button svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.admin aside button:last-child {
+  margin-top: 20px;
+  color: #ffffff;
+  background: #263542;
+}
+
+.admin-main {
+  width: calc(100% - 220px);
+  min-height: 100vh;
+  margin-left: 220px;
+  padding: 40px 30px 70px;
+  box-sizing: border-box;
+}
+
+.admin-top {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.admin-top h1 {
+  margin: 7px 0 0;
+  color: #172632;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 38px;
+}
+
+.admin-user {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #52606b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-user svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* =========================================================
+   ADMIN CONTENT
+   These styles are scoped to .admin so other pages
+   are not affected.
+   ========================================================= */
+
+.admin-main > div:not(.admin-top) {
+  box-sizing: border-box;
+}
+
+.admin-main section,
+.admin-main .admin-card,
+.admin-main .panel,
+.admin-main .admin-panel {
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgba(25, 35, 45, 0.06);
+}
+
+
+/* Admin tables */
+
+.admin-main table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.admin-main th {
+  padding: 15px 14px;
+  background: #f3f1ed;
+  color: #263541;
+  border-bottom: 1px solid #e5e1db;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.admin-main td {
+  padding: 14px;
+  border-bottom: 1px solid #eeeae4;
+  color: #374550;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.admin-main tr:last-child td {
+  border-bottom: 0;
+}
+
+.admin-main tr:hover td {
+  background: #faf9f7;
+}
+
+
+/* Admin images */
+
+.admin-main table img {
+  width: 90px;
+  height: 120px;
+  display: block;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.admin-main img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+
+/* Admin buttons */
+
+.admin-main button {
+  cursor: pointer;
+}
+
+.admin-main button:not(.admin-top button) {
+  font-family: inherit;
+}
+
+.admin-main button[type="button"],
+.admin-main button[type="submit"] {
+  border-radius: 8px;
+}
+
+.admin-main .edit-btn {
+  padding: 7px 12px;
+  border: 1px solid #d9d5cf;
+  background: white;
+  color: #263541;
+  font-weight: 600;
+}
+
+.admin-main .delete-btn {
+  padding: 7px 12px;
+  border: 1px solid #f45b48;
+  background: #f45b48;
+  color: white;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ADMIN CONTENT HEADINGS / ADD BUTTONS
+   ========================================================= */
+
+.admin-main h2 {
+  color: #172632;
+}
+
+.admin-main input,
+.admin-main select,
+.admin-main textarea {
+  box-sizing: border-box;
+  padding: 11px 13px;
+  border: 1px solid #d9d5cf;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #172632;
+  font-family: inherit;
+}
+
+.admin-main input:focus,
+.admin-main select:focus,
+.admin-main textarea:focus {
+  border-color: #f45b48;
+  box-shadow: 0 0 0 3px rgba(244, 91, 72, 0.1);
+}
+
+
+/* =========================================================
+   RESPONSIVE - REGISTER
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .auth {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-art {
+    min-height: 300px;
+    padding: 100px 30px 45px;
+  }
+
+  .auth-art .logo {
+    top: 25px;
+    left: 30px;
+  }
+
+  .auth-art h1 {
+    font-size: 48px;
+  }
+
+  .auth-art p {
+    font-size: 16px;
+  }
+
+  .auth-form {
+    min-height: auto;
+    padding: 50px 25px 70px;
+  }
+
+  .admin-main {
+    padding: 30px 20px 60px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .auth-art {
+    min-height: 250px;
+    padding: 95px 22px 35px;
+  }
+
+  .auth-art .logo {
+    left: 22px;
+  }
+
+  .auth-art h1 {
+    font-size: 39px;
+  }
+
+  .auth-form {
+    padding: 40px 20px 60px;
+  }
+
+  .form-box h1 {
+    font-size: 34px;
+  }
+
+  .admin aside {
+    width: 190px;
+  }
+
+  .admin-main {
+    width: calc(100% - 190px);
+    margin-left: 190px;
+    min-width: 600px;
+  }
+
+  .admin-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   ADMIN CONTENT STYLING
+   Does not affect normal BookVerse pages
+   ========================================================= */
+
+.admin-main .panel.full {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Panel heading */
+.admin-main .panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.admin-main .panel-title h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+/* Add buttons */
+.admin-main .panel-title .primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 20px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* =========================================================
+   BOOK / USER / CATEGORY / ORDER ROWS
+   ========================================================= */
+
+.admin-main .admin-row {
+  width: 100%;
+  min-height: 70px;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 70px minmax(180px, 1.5fr) minmax(150px, 1fr) 110px 130px;
+  align-items: center;
+  gap: 18px;
+
+  padding: 12px 0;
+  border-bottom: 1px solid #eee8e1;
+}
+
+.admin-main .admin-row:last-child {
+  border-bottom: none;
+}
+
+/* Book cover */
+.admin-main .admin-row img {
+  width: 55px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 7px;
+  display: block;
+}
+
+/* Text inside rows */
+.admin-main .admin-row b {
+  font-size: 15px;
+  color: #172b3a;
+}
+
+.admin-main .admin-row span {
+  color: #665e57;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.admin-main .admin-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.admin-main .admin-actions button {
+  border: 1px solid #d9d0c8;
+  background: #fff;
+  color: #273746;
+
+  padding: 8px 12px;
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-main .admin-actions button:hover {
+  border-color: #ff5b4d;
+  color: #ff5b4d;
+  background: #fff7f5;
+}
+
+/* =========================================================
+   CATEGORY / USER / ORDER ROWS
+   These rows may contain fewer columns
+   ========================================================= */
+
+.admin-main .admin-row:not(:has(img)) {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+/* Keep action buttons together */
+.admin-main .admin-row:not(:has(img)) .admin-actions {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.admin-main .empty-state {
+  padding: 45px 20px;
+  text-align: center;
+  color: #7a7169;
+}
+
+/* =========================================================
+   ADMIN TABLE-LIKE SPACING
+   ========================================================= */
+
+.admin-main .panel.full {
+  overflow-x: auto;
+}
+
+.admin-main .admin-row {
+  min-width: 650px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .admin-main {
+    padding: 25px 18px;
+  }
+
+  .admin-main .panel-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-main .admin-row {
+    grid-template-columns: 55px minmax(160px, 1fr) auto;
+    min-width: 0;
+    gap: 12px;
+  }
+
+  .admin-main .admin-row span {
+    display: none;
+  }
+
+  .admin-main .admin-actions {
+    justify-content: flex-start;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .admin-main .admin-row {
+    grid-template-columns: 50px 1fr;
+  }
+
+  .admin-main .admin-actions {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+
+  .admin-main .admin-row img {
+    width: 45px;
+    height: 60px;
+  }
+
+}
+
+/* =========================================================
+   ADMIN - POPULAR CATEGORIES FINAL FIX
+   ========================================================= */
+
+.admin-main .admin-panels .progress {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 38px !important;
+  margin: 0 0 20px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+/* CATEGORY NAME + PERCENTAGE */
+.admin-main .admin-panels .progress p {
+  position: relative !important;
+  z-index: 10 !important;
+
+  display: flex !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 20px !important;
+
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+
+  overflow: visible !important;
+
+  color: #172b3a !important;
+  background: transparent !important;
+
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* CATEGORY NAME */
+.admin-main .admin-panels .progress p {
+  white-space: nowrap !important;
+}
+
+/* PERCENTAGE */
+.admin-main .admin-panels .progress p b {
+  position: relative !important;
+  z-index: 11 !important;
+
+  display: block !important;
+
+  color: #ff5b4d !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+
+  white-space: nowrap !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* BACKGROUND BAR */
+.admin-main .admin-panels .progress i {
+  position: relative !important;
+  z-index: 1 !important;
+
+  display: block !important;
+
+  width: 100% !important;
+  height: 8px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border-radius: 0px !important;
+
+  background: #e5dfd8 !important;
+
+  overflow: hidden !important;
+}
+
+/* COLORED PORTION */
+.admin-main .admin-panels .progress i::after {
+  content: "";
+  display: block;
+
+  height: 100%;
+  border-radius: 20px;
+
+  background: #000000;
+}
+
+/* Individual percentages */
+.admin-main .admin-panels .progress:nth-child(2) i::after {
+  width: 92%;
+}
+
+.admin-main .admin-panels .progress:nth-child(3) i::after {
+  width: 81%;
+}
+
+.admin-main .admin-panels .progress:nth-child(4) i::after {
+  width: 70%;
+}
+
+.admin-main .admin-panels .progress:nth-child(5) i::after {
+  width: 59%;
+}
+
+/* =========================================================
+   PHASE 1 - SEARCH, FILTERS & SORTING
+   ========================================================= */
+
+/* Search bar */
+.search {
+  width: 100%;
+  max-width: 650px;
+  margin: 25px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.search svg {
+  flex-shrink: 0;
+  color: #777;
+}
+
+.search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+  color: #222;
+}
+
+.search input::placeholder {
+  color: #999;
+}
+
+
+/* Sort row */
+.sort-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.sort-row label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sort-row select,
+.advanced-filters select {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+}
+
+
+/* Advanced filters */
+.advanced-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0 20px;
+}
+
+
+/* Clear filters button */
+.clear-filter {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.clear-filter:hover {
+  background: #f5f5f5;
+}
+
+
+/* Category filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 30px;
+}
+
+.filters button {
+  padding: 9px 17px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: #fff;
+  color: #444;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filters button:hover {
+  border-color: #222;
+}
+
+.filters button.active {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+}
+
+
+/* =========================================================
+   BOOK ACTION BUTTONS
+   ========================================================= */
+
+.book-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.book-actions button {
+  flex: 1;
+  min-height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+
+/* Add to cart */
+.add-btn {
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+}
+
+.add-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+
+/* Buy now */
+.buy-now-btn {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #222;
+}
+
+.buy-now-btn:hover {
+  background: #f5f5f5;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CART PAGE
+   ========================================================= */
+
+.cart-page {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 40px 0 70px;
+}
+
+
+/* Cart header */
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 35px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  color: #111;
+}
+
+
+/* Cart layout */
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 350px;
+  gap: 30px;
+  align-items: start;
+}
+
+
+/* Cart items */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+
+/* Individual cart item */
+.cart-item {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  background: #fff;
+}
+
+
+/* Cart book cover */
+.cart-book-cover {
+  width: 110px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+/* Cart book information */
+.cart-book-info h2 {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.cart-book-info p {
+  margin: 5px 0 12px;
+  color: #777;
+}
+
+.cart-category {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #777;
+}
+
+
+/* Cart price */
+.cart-price {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.cart-price span {
+  margin-left: 8px;
+  color: #999;
+  text-decoration: line-through;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   QUANTITY CONTROLS
+   ========================================================= */
+
+.quantity-controls {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.quantity-controls button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: #f7f7f7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-controls button:hover {
+  background: #eaeaea;
+}
+
+.quantity-controls strong {
+  min-width: 38px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* Right side */
+.cart-item-right {
+  height: 100%;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cart-item-right > strong {
+  font-size: 18px;
+}
+
+
+/* Remove button */
+.remove-btn {
+  border: none;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.remove-btn:hover {
+  color: #d33;
+}
+
+
+/* =========================================================
+   CART SUMMARY
+   ========================================================= */
+
+.cart-summary {
+  position: sticky;
+  top: 25px;
+  padding: 25px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.cart-summary h2 {
+  margin-top: 0;
+  margin-bottom: 22px;
+  font-size: 22px;
+}
+
+
+/* Summary row */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0;
+  font-size: 15px;
+}
+
+.summary-row span {
+  color: #666;
+}
+
+.summary-row strong {
+  color: #222;
+}
+
+
+/* Divider */
+.summary-divider {
+  height: 1px;
+  background: #e5e5e5;
+  margin: 20px 0;
+}
+
+
+/* Total */
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.summary-total strong {
+  font-size: 23px;
+}
+
+
+/* Checkout button */
+.checkout-btn {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 9px;
+  background: #222;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.checkout-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+
+/* Secure text */
+.secure-text {
+  text-align: center;
+  margin: 15px 0 0;
+  color: #777;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state,
+.cart-empty {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.empty-state h2,
+.cart-empty h1 {
+  margin-bottom: 10px;
+}
+
+.empty-state p,
+.cart-empty p {
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.cart-empty {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-empty svg {
+  color: #888;
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CHECKOUT
+   ========================================================= */
+
+.checkout-box {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.checkout-box form {
+  margin-top: 30px;
+}
+
+.checkout-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.checkout-options section {
+  padding: 25px;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.checkout-options h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+
+/* Checkout inputs */
+.checkout-options input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 46px;
+  margin-bottom: 12px;
+  padding: 11px 13px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.checkout-options input[type="text"]:focus {
+  border-color: #555;
+}
+
+
+/* City + pincode */
+.checkout-options section > div {
+  display: flex;
+  gap: 12px;
+}
+
+.checkout-options section > div input {
+  flex: 1;
+}
+
+
+/* =========================================================
+   FORM ERRORS
+   ========================================================= */
+
+.form-error {
+  display: block;
+  margin: -5px 0 12px;
+  color: #d33;
+  font-size: 12px;
+}
+
+.checkout-options input[aria-invalid="true"] {
+  border-color: #d33;
+}
+
+
+/* City and pincode error container */
+.checkout-field-errors {
+  display: flex;
+  gap: 12px;
+}
+
+.checkout-field-errors small {
+  flex: 1;
+}
+
+
+/* =========================================================
+   PAYMENT RADIO BUTTONS
+   ========================================================= */
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.radio:last-child {
+  border-bottom: none;
+}
+
+.radio input {
+  cursor: pointer;
+}
+
+
+/* Wide button */
+.wide {
+  width: 100%;
+  margin-top: 25px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  .checkout-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .cart-page {
+    width: 94%;
+    padding-top: 25px;
+  }
+
+  .cart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .cart-item {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .cart-book-cover {
+    width: 80px;
+    height: 110px;
+  }
+
+  .cart-item-right {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+    height: auto;
+  }
+
+  .book-actions {
+    flex-direction: column;
+  }
+
+  .advanced-filters {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .advanced-filters select,
+  .clear-filter {
+    width: 100%;
+  }
+
+  .sort-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sort-row select {
+    width: 100%;
+  }
+
+  .filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+  }
+
+  .filters button {
+    flex-shrink: 0;
+  }
+
+  .checkout-options section > div {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .checkout-field-errors {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .cart-item {
+    padding: 14px;
+  }
+
+  .cart-book-info h2 {
+    font-size: 16px;
+  }
+
+  .cart-price {
+    font-size: 15px;
+  }
+
+  .quantity-controls button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .quantity-controls strong {
+    min-width: 32px;
+  }
+
+  .cart-summary {
+    padding: 18px;
+  }
+
+  .checkout-options section {
+    padding: 18px;
+  }
+}
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+.profile-page {
+  min-height: calc(100vh - 76px);
+  padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   PROFILE HERO
+========================================================= */
+
+.profile-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 55px;
+  padding-bottom: 35px;
+}
+
+
+.profile-user {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+
+/* Avatar */
+.profile-avatar {
+  width: 88px;
+  height: 88px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #f15b45;
+  color: white;
+
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  font-weight: 700;
+
+  box-shadow:
+    0 10px 25px rgba(241, 91, 69, 0.2);
+}
+
+
+.profile-user-info h1 {
+  margin: 5px 0 7px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 38px;
+  line-height: 1.15;
+}
+
+
+.profile-user-info p {
+  margin: 0;
+  color: #82909a;
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.profile-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border: 1px solid #ddd6ce;
+  border-radius: 9px;
+
+  background: white;
+  color: #52606b;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.profile-logout:hover {
+  color: #f15b45;
+  border-color: #f15b45;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PROFILE STAT CARDS
+========================================================= */
+
+.profile-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 5px;
+  margin-bottom: 35px;
+}
+
+
+.profile-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 20px;
+
+  background: white;
+
+  border: 1px solid #e8e2da;
+  border-radius: 14px;
+
+  text-decoration: none;
+  color: inherit;
+
+  box-shadow:
+    0 5px 20px rgba(25, 42, 53, 0.04);
+
+  transition: 0.2s ease;
+}
+
+
+.profile-stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #f15b45;
+
+  box-shadow:
+    0 10px 25px rgba(25, 42, 53, 0.08);
+}
+
+
+.profile-stat-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background: #fff0ed;
+  color: #f15b45;
+}
+
+
+.profile-stat-card strong {
+  display: block;
+
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+
+.profile-stat-card span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #82909a;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PROFILE CONTENT
+========================================================= */
+
+.profile-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 22px;
+}
+
+
+.profile-section {
+  padding: 25px;
+
+  background: white;
+
+  border: 1px solid #e8e2da;
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 20px rgba(25, 42, 53, 0.04);
+}
+
+
+/* Section heading */
+.profile-section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+
+  color: #52606b;
+}
+
+
+.profile-section-heading h2 {
+  margin: 5px 0 0;
+
+  font-family: "Playfair Display", serif;
+
+  color: #17212b;
+  font-size: 25px;
+}
+
+
+.profile-section-heading > svg {
+  color: #f15b45;
+}
+
+
+/* =========================================================
+   ACCOUNT DETAILS
+========================================================= */
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid #eee8e1;
+}
+
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid #eee8e1;
+}
+
+
+.profile-detail span {
+  color: #82909a;
+
+  font-size: 13px;
+}
+
+
+.profile-detail strong {
+  color: #17212b;
+
+  font-size: 14px;
+
+  text-align: right;
+
+  word-break: break-word;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.profile-action {
+  display: grid;
+
+  grid-template-columns:
+    45px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 13px;
+
+  border: 1px solid #eee8e1;
+  border-radius: 11px;
+
+  text-decoration: none;
+
+  color: inherit;
+
+  transition: 0.2s ease;
+}
+
+
+.profile-action:hover {
+  border-color: #f15b45;
+  background: #fff9f7;
+  transform: translateX(2px);
+}
+
+
+.profile-action-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: #fff0ed;
+  color: #f15b45;
+}
+
+
+.profile-action h3 {
+  margin: 0;
+
+  color: #17212b;
+
+  font-size: 14px;
+}
+
+
+.profile-action p {
+  margin: 4px 0 0;
+
+  color: #82909a;
+
+  font-size: 12px;
+}
+
+
+.profile-action > svg {
+  color: #82909a;
+}
+
+
+/* =========================================================
+   PROFILE DARK MODE
+========================================================= */
+
+.dark .profile-stat-card,
+.dark .profile-section {
+  background: #18212b;
+
+  border-color: #2a3541;
+}
+
+
+.dark .profile-user-info h1,
+.dark .profile-section-heading h2,
+.dark .profile-detail strong,
+.dark .profile-action h3 {
+  color: white;
+}
+
+
+.dark .profile-stat-card {
+  color: white;
+}
+
+
+.dark .profile-stat-icon,
+.dark .profile-action-icon {
+  background: rgba(241, 91, 69, 0.12);
+  color: #f15b45;
+}
+
+
+.dark .profile-detail,
+.dark .profile-details {
+  border-color: #2a3541;
+}
+
+
+.dark .profile-action {
+  border-color: #2a3541;
+}
+
+
+.dark .profile-action:hover {
+  background: rgba(241, 91, 69, 0.06);
+  border-color: #f15b45;
+}
+
+
+.dark .profile-logout {
+  background: #18212b;
+  border-color: #3a4651;
+  color: #d7dde0;
+}
+
+
+.dark .profile-logout:hover {
+  border-color: #f15b45;
+  color: #f15b45;
+}
+
+
+/* =========================================================
+   PROFILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .profile-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .profile-hero {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding-top: 35px;
+  }
+
+
+  .profile-user {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+
+  .profile-avatar {
+    width: 65px;
+    height: 65px;
+
+    font-size: 28px;
+  }
+
+
+  .profile-user-info h1 {
+    font-size: 27px;
+  }
+
+
+  .profile-user-info p {
+    font-size: 13px;
+  }
+
+
+  .profile-logout {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .profile-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+
+  .profile-stat-card {
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+
+  .profile-stat-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .profile-section {
+    padding: 18px;
+  }
+
+
+  .profile-detail {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+
+  .profile-detail strong {
+    text-align: left;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   AUTH ERROR
+========================================================= */
+
+.auth-error {
+  margin: 8px 0 12px !important;
+
+  padding: 10px 12px;
+
+  border: 1px solid #f3b5aa;
+  border-radius: 8px;
+
+  background: #fff2ef;
+
+  color: #d94b38 !important;
+
+  font-size: 13px !important;
+}
+
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+.admin-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat {
+  background: #fff;
+  border: 1px solid #eee5dd;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.stat span {
+  display: block;
+  color: #708090;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.stat h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #142333;
+}
+
+.stat small {
+  color: #718096;
+  font-size: 13px;
+}
+
+/* =========================================
+   ADMIN PANEL
+========================================= */
+
+.panel {
+  background: #fff;
+  border: 1px solid #eee5dd;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.panel h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #142333;
+}
+
+/* =========================================
+   ROW
+========================================= */
+
+.row {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee8e1;
+  color: #172b3a;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row b {
+  color: #142333;
+}
+
+.row span {
+  color: #526477;
+}
+
+/* =========================================
+   CATEGORY PROGRESS
+========================================= */
+
+.progress {
+  margin-bottom: 18px;
+}
+
+.progress:last-child {
+  margin-bottom: 0;
+}
+
+.progress p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #172b3a;
+}
+
+.progress p b {
+  color: #f05a47;
+}
+
+.progress i {
+  display: block;
+  height: 8px;
+  background: #17202a;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-panels {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+}
+
+/* =========================================
+   ADMIN PROFILE
+========================================= */
+
+.admin-profile {
+  width: 100%;
+}
+
+/* PROFILE HEADER */
+
+.admin-profile-header {
+  background: #ffffff;
+  border: 1px solid #e7e0d8;
+  border-radius: 18px;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.admin-avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: #f45b4f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-profile-info {
+  flex: 1;
+}
+
+.admin-profile-info h2 {
+  margin: 5px 0 6px;
+  font-size: 30px;
+  color: #10202e;
+}
+
+.admin-profile-info p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.admin-role-badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: #fff0ed;
+  color: #f45b4f;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   ADMIN PROFILE STATS
+========================================= */
+
+.admin-profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.admin-profile-stat {
+  background: #ffffff;
+  border: 1px solid #e7e0d8;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: #fff0ed;
+  color: #f45b4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-stat-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.admin-profile-stat strong {
+  display: block;
+  font-size: 22px;
+  color: #10202e;
+}
+
+.admin-profile-stat span {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  color: #718096;
+}
+
+
+/* =========================================
+   PROFILE GRID
+========================================= */
+
+.admin-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.admin-profile-card {
+  background: #ffffff;
+  border: 1px solid #e7e0d8;
+  border-radius: 18px;
+  padding: 26px;
+}
+
+.profile-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee7df;
+  margin-bottom: 5px;
+}
+
+.profile-card-heading h3 {
+  margin: 5px 0 0;
+  font-size: 23px;
+  color: #10202e;
+}
+
+.profile-card-heading > svg {
+  width: 22px;
+  height: 22px;
+  color: #f45b4f;
+}
+
+
+/* =========================================
+   ACCOUNT DETAILS
+========================================= */
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee7df;
+}
+
+.profile-detail:last-child {
+  border-bottom: none;
+}
+
+.detail-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #fff4f1;
+  color: #f45b4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-detail span {
+  display: block;
+  color: #718096;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.profile-detail strong {
+  display: block;
+  color: #10202e;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   ADMIN ACCESS
+========================================= */
+
+.admin-access-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.admin-access-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px;
+  border: 1px solid #eee7df;
+  border-radius: 12px;
+  transition: 0.2s ease;
+}
+
+.admin-access-item:hover {
+  border-color: #f45b4f;
+  transform: translateX(3px);
+}
+
+.access-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #fff4f1;
+  color: #f45b4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.access-icon svg {
+  width: 20px;
+}
+
+.admin-access-item div:nth-child(2) {
+  flex: 1;
+}
+
+.admin-access-item strong {
+  display: block;
+  font-size: 14px;
+  color: #10202e;
+}
+
+.admin-access-item span {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+  color: #718096;
+}
+
+.admin-access-item > svg {
+  width: 18px;
+  color: #8b98a5;
+}
+
+
+/* =========================================
+   ADMIN NOTICE
+========================================= */
+
+.admin-profile-notice {
+  margin-top: 22px;
+  padding: 18px 20px;
+  border: 1px solid #f2d9d4;
+  background: #fff8f6;
+  border-radius: 14px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.admin-profile-notice > svg {
+  color: #f45b4f;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+.admin-profile-notice strong {
+  display: block;
+  color: #10202e;
+  margin-bottom: 4px;
+}
+
+.admin-profile-notice p {
+  margin: 0;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .admin-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-profile-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .admin-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-role-badge {
+    align-self: flex-start;
+  }
+
+  .admin-profile-info h2 {
+    font-size: 24px;
+  }
+
+}
+
+/* =========================================
+   ADMIN PROFILE
+   ========================================= */
+
+.admin-profile {
+  width: 100%;
+}
+
+
+/* =========================================
+   PROFILE WELCOME CARD
+   ========================================= */
+
+.profile-welcome {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #ffffff;
+  border: 1px solid #eadfd5;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.profile-avatar {
+  width: 74px;
+  height: 74px;
+  min-width: 74px;
+  border-radius: 50%;
+  background: #f85b4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.profile-avatar svg {
+  width: 38px;
+  height: 38px;
+  stroke-width: 2;
+}
+
+.profile-welcome-text {
+  flex: 1;
+}
+
+.profile-eyebrow {
+  display: block;
+  color: #f65345;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.profile-welcome-text h2 {
+  margin: 0 0 5px;
+  color: #102337;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.profile-welcome-text p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.admin-role {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff0ed;
+  color: #f65345;
+  padding: 9px 15px;
+  border-radius: 22px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-role svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* =========================================
+   PROFILE STATISTICS
+   ========================================= */
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #ffffff;
+  border: 1px solid #eadfd5;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.profile-stat-icon {
+  width: 43px;
+  height: 43px;
+  min-width: 43px;
+  border-radius: 10px;
+  background: #fff0ed;
+  color: #f65345;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-stat-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.profile-stat h3 {
+  margin: 0 0 2px;
+  font-size: 20px;
+  color: #102337;
+}
+
+.profile-stat p {
+  margin: 0;
+  font-size: 12px;
+  color: #718096;
+}
+
+
+/* =========================================
+   PROFILE CONTENT
+   ========================================= */
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  background: #ffffff;
+  border: 1px solid #eadfd5;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.profile-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid #eee5dd;
+}
+
+.profile-card-header span {
+  display: block;
+  color: #f65345;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.profile-card-header h3 {
+  margin: 0;
+  color: #102337;
+  font-size: 21px;
+}
+
+.profile-card-header > svg {
+  width: 19px;
+  height: 19px;
+  color: #f65345;
+}
+
+
+/* =========================================
+   ACCOUNT DETAILS
+   ========================================= */
+
+.account-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 70px;
+  border-bottom: 1px solid #eee5dd;
+}
+
+.account-detail:last-child {
+  border-bottom: none;
+}
+
+.detail-icon {
+  width: 37px;
+  height: 37px;
+  min-width: 37px;
+  border-radius: 9px;
+  background: #fff4f1;
+  color: #f65345;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detail-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.detail-text span {
+  color: #718096;
+  font-size: 11px;
+}
+
+.detail-text strong {
+  color: #102337;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: right;
+}
+
+
+/* =========================================
+   QUICK ACCESS
+   ========================================= */
+
+.quick-access-button {
+  width: 100%;
+  min-height: 62px;
+  margin-top: 9px;
+  padding: 10px 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: #ffffff;
+  border: 1px solid #eadfd5;
+  border-radius: 11px;
+
+  cursor: pointer;
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.quick-access-button:hover {
+  background: #fffaf8;
+  border-color: #f2b2a9;
+  transform: translateX(2px);
+}
+
+.quick-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff0ed;
+  color: #f65345;
+  border-radius: 9px;
+}
+
+.quick-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.quick-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.quick-text strong {
+  color: #102337;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.quick-text span {
+  color: #718096;
+  font-size: 11px;
+}
+
+.quick-arrow {
+  width: 17px;
+  height: 17px;
+  color: #8290a0;
+}
+
+
+/* =========================================
+   ADMINISTRATOR ACCESS
+   ========================================= */
+
+.administrator-access {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  background: #ffffff;
+  border: 1px solid #f2cfc8;
+  border-radius: 13px;
+
+  padding: 14px 18px;
+}
+
+.administrator-access > svg {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  color: #f65345;
+}
+
+.administrator-access strong {
+  display: block;
+  color: #102337;
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+
+.administrator-access p {
+  margin: 0;
+  color: #718096;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-welcome {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .admin-role {
+    margin-left: 92px;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .profile-welcome {
+    padding: 18px;
+  }
+
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .profile-avatar svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .profile-welcome-text h2 {
+    font-size: 22px;
+  }
+
+  .admin-role {
+    margin-left: 0;
+  }
+
+  .profile-card {
+    padding: 16px;
+  }
+
+  .detail-text strong {
+    font-size: 12px;
+  }
+
+}
